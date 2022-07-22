@@ -25,4 +25,7 @@
     fcitx5-lua
     fcitx5-mozc
   ];
+  environment.systemPackages = with pkgs; [
+    lua # required by fcitx5-lua
+  ];
 }
