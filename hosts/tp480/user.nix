@@ -1,8 +1,14 @@
 { config, pkgs, ... }: {
+  # users with their own groups, I think
+  users.groups = {
+    hyx = { gid = 1000; };
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.hyx = {
     isNormalUser = true;
     description = "hyx";
+    group = "hyx";
     extraGroups = [ 
       "networkmanager"
       "wheel" "adm" 
