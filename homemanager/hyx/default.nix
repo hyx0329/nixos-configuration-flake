@@ -61,6 +61,7 @@
     pkgs.gnomeExtensions.note
     pkgs.gnomeExtensions.openweather
     pkgs.gnomeExtensions.tray-icons-reloaded
+    pkgs.gitFull
 
   ];
 
