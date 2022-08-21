@@ -51,7 +51,7 @@
           home-manager.useUserPackages = true;
           # Make sure the user names are correct
           # home-manager.users.username = import ./homemanager/home-username.nix;
-          home-manager.users.hyx = import ./homemanager/hyx.nix;
+          home-manager.users.hyx = import ./homemanager/hyx;
         }
       ];
     };
