@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, libs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./user.nix
+      # ./user.nix
     ];
 
   # Bootloader.
@@ -22,6 +22,7 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
+  # note GNOME uses Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
 }
 
