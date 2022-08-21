@@ -70,7 +70,7 @@
   };  
 
   programs.bash = {
-    enable = true
+    enable = true;
   };
 }
 
