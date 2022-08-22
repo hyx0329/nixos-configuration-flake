@@ -32,4 +32,7 @@
       vim
     ];
   };
+
+  # use zsh as default shell
+  users.users.hyx.shell = pkgs.zsh;
 }

@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  users.users.hyx.shell = pkgs.zsh;
-
   imports = [
     ./terminal.nix
   ];
