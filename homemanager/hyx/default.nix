@@ -3,6 +3,7 @@
 {
   imports = [
     ./terminal.nix
+    ./gpg.nix
   ];
 
   # here are basic packages from repository
@@ -23,9 +24,6 @@
     # archive tools
     pkgs.unzip
     pkgs.p7zip
-
-    # security
-    pkgs.gnupg
 
     # proxy
     pkgs.clash
@@ -55,6 +53,9 @@
     pkgs.libreoffice  # emm another office suite
     pkgs.gnome.file-roller  # note I'm using gnome, this is archive viewer
     pkgs.texlive.combined.scheme-full  # yep I need latex, still
+
+    # user space driver
+    pkgs.epson-escpr2
 
     # other utilities
     pkgs.fsearch  # file searching
