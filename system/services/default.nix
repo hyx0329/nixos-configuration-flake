@@ -4,6 +4,7 @@
     ./audio.nix
     ./bluetooth.nix
     ./printing.nix
+    ./smartcard.nix
   ];
 }
 
