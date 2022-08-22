@@ -66,6 +66,12 @@
 
   programs = {
     bash.enable = true;
+    zsh.enable = true;  # this is required due to a HM bug
+  };
+
+  home.sessionVariables = {
+    QT_IM_MODULE = "fcitx";  # for QT applications with fcitx
+    NIXOS_OZONE_WL = "1";    # enable wayland for most applications
   };
 }
 
