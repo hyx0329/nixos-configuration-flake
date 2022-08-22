@@ -22,41 +22,64 @@
   # currently I only have one laptop so no "let...in" required
   # but added for future convenience
   let
-    overlayModule = {
-      nixpkgs.overlays = [
-        (nur.overlay)
-        #(import ./overlays)
-      ];
-    };
     userName = "hyx";
   in
   {
-    nixosConfigurations.tp480 = nixpkgs.lib.nixosSystem {
-      specialArgs = inputs;
-      system = "x86_64-linux";
-      modules = [
-        overlayModule                 # global overlay module
-        ./hosts/tp480                 # customized platform config for hardware
-        ./system/release-configs.nix  # allow non-free, pin stateVersion
-        ./system/users/hyx.nix        # my account config, don't forget to set passwd
-        ./system/desktop/gnome.nix    # gnome4 looks cool
-        ./system/locale.nix           # IM, font, etc.
-        ./system/network.nix          # network manager and default configs
-        ./system/services             # power, bluetooth, audio, printing
-        ./system/softwares            # include nix configs
-
-        # home-manager integration
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit system inputs; };
-          home-manager.users.${userName} = {
-            imports = [ ./homemanager/${userName} ];
-            home.stateVersion = "22.11";
+    nixosConfigurations = 
+      let
+        # x86 configs
+        system = "x86_64-linux";
+        pkgs = nixpkgs.legacyPackages.${system};  # a technique to make sure only one nixpkgs instance for multiple flakes
+        overlay-unstable = final: prev: {
+          unstable = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
           };
-        }
-      ];
-    };
+        };
+        overlayModule = {
+          nixpkgs.overlays = [
+            (nur.overlay)
+            overlay-unstable
+            #(import ./overlays)
+          ];
+        };
+        commonConfigs = [
+          overlayModule                 # global overlay module
+          ./system/release-configs.nix  # allow non-free, pin stateVersion
+          ./system/users/${userName}.nix # my account config, don't forget to set passwd
+          ./system/desktop/gnome.nix    # gnome4 looks cool
+          ./system/locale.nix           # IM, font, etc.
+          ./system/network.nix          # network manager and default configs
+          ./system/services             # power, bluetooth, audio, printing
+          ./system/softwares            # include nix configs
+        ];
+        homeConfigs = [
+          # home-manager integration
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit system inputs; };
+            home-manager.users.${userName} = {
+              imports = [ ./homemanager/${userName} ];
+              home.stateVersion = "22.11";
+            };
+          }
+        ];
+        composeLinuxSystem = extraModules: nixpkgs.lib.nixosSystem {
+          inherit system pkgs;
+          specialArgs = {
+            inherit system inputs;
+            inherit nixos-hardware;  # for hardware configuration or will encounter infinite recursion
+          };
+          modules = commonConfigs ++ homeConfigs ++ extraModules;
+        };
+      in
+        {
+          # config tp480
+          tp480 = composeLinuxSystem [
+            ./hosts/tp480                 # customized platform config for hardware
+          ];
+        };
   };
 }
