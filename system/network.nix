@@ -16,5 +16,9 @@
   # networking.firewall.enable = false;
 
   # network discovery
-  services.avahi.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    # reflector = true;
+  };
 }
