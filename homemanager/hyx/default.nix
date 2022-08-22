@@ -1,7 +1,7 @@
-{ pkgs, users, userName, ... }:
+{ config, pkgs, ... }:
 
 {
-  users.users.${userName}.shell = pkgs.zsh;
+  users.users.hyx.shell = pkgs.zsh;
 
   imports = [
     ./terminal.nix
