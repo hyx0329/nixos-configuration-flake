@@ -5,7 +5,7 @@
 
   imports = [
     ./terminal.nix
-  ]
+  ];
 
   # here are basic packages from repository
   home.packages = [ 
