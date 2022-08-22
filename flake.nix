@@ -36,13 +36,13 @@
 
         # hardware configs
         ./hosts/tp480  # customized platform config for hardware
-        ./modules/release-configs.nix
-	./modules/users/hyx.nix  # my account config, don't forget to set passwd
-        ./modules/desktop/gnome.nix  # gnome4 looks cool
-        ./modules/locale.nix  # IM, font, etc.
-        ./modules/network.nix
-        ./modules/services
-        ./modules/softwares  # include nix configs
+        ./system/release-configs.nix
+	./system/users/hyx.nix  # my account config, don't forget to set passwd
+        ./system/desktop/gnome.nix  # gnome4 looks cool
+        ./system/locale.nix  # IM, font, etc.
+        ./system/network.nix
+        ./system/services
+        ./system/softwares  # include nix configs
 
         # home-manager integration
         home-manager.nixosModules.home-manager
