@@ -5,6 +5,7 @@
     ./terminal.nix
     ./gpg.nix
     ./vim.nix
+    ./gnome.nix
   ];
 
   # here are basic packages from repository
@@ -59,10 +60,6 @@
 
     # other utilities
     pkgs.fsearch  # file searching
-    pkgs.gnomeExtensions.gsconnect
-    pkgs.gnomeExtensions.note
-    pkgs.gnomeExtensions.openweather
-    pkgs.gnomeExtensions.tray-icons-reloaded
     pkgs.gitFull
 
   ];
