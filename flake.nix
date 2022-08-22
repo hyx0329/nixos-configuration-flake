@@ -51,6 +51,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.${userName} = import ./homemanager/${userName};
+          home.stateVersion = "22.11";
         }
       ];
     };
