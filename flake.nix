@@ -50,6 +50,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit system inputs; };
           home-manager.users.${userName} = {
             imports = [ ./homemanager/${userName} ];
             home.stateVersion = "22.11";
