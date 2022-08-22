@@ -15,6 +15,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.loader.timeout = 1;  # 5s is too long
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/11631fc7-ad6a-47e9-861e-d2213294d95d";
