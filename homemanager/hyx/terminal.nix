@@ -2,9 +2,10 @@
 
 {
   home.packages = with pkgs; [
+    inputs.comma.packages.${system}.default
     ripgrep
     htop
-    inputs.comma.packages.${system}.default
+    thefuck
   ];
 
   programs = {
@@ -26,9 +27,10 @@
       plugins = [
         "git" "thefuck"
         "gpg-agent"
-        "zsh-history-substring-search"
+        "history-substring-search"
+        "systemd"
       ];
-      theme = "davevewer";
+      theme = "daveverwer";
     };
   };
 }
