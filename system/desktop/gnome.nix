@@ -36,5 +36,5 @@
     iagno # go
     hitori # sudoku
     atomix # puzzle
-  ])
+  ]);
 }
