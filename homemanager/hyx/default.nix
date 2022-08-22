@@ -74,7 +74,6 @@
 
   programs = {
     bash.enable = true;
-    dconf.enable = true;
   };
 }
 

@@ -16,4 +16,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+
+  # allow home manager to config gnome
+  programs.dconf.enable = true;
 }
