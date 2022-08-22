@@ -26,7 +26,7 @@
       nixpkgs.overlays = [
         (nur.overlay)
         #(import ./overlays)
-      ]
+      ];
     };
     userName = "hyx";
   in
