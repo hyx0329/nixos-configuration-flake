@@ -26,6 +26,12 @@
       fsType = "vfat";
     };
 
+  # later use a separated home drive
+  # fileSystems."/home" = 
+  #   { device = "/dev/disk/by-uuid/{homeDriveUuid}";
+  #     fsType = "ext4"
+  #   }
+
   swapDevices = [ { device = "/dev/disk/by-uuid/fd8f8d7a-4b1c-472d-a85a-61c7b1a2d9b3"; } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
