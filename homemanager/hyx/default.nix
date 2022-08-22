@@ -1,8 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, users, userName, ... }:
 
 {
-  # IDK why need this
-  home.stateVersion = "22.11";
+  users.users.${userName}.shell = pkgs.zsh;
+
+  imports = [
+    ./terminal.nix
+  ]
 
   # here are basic packages from repository
   home.packages = [ 
@@ -69,8 +72,9 @@
     EDITOR = "vim";
   };  
 
-  programs.bash = {
-    enable = true;
+  programs = {
+    bash.enable = true;
+    dconf.enable = true;
   };
 }
 
