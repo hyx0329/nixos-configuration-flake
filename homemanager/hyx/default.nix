@@ -66,7 +66,6 @@
 
   programs = {
     bash.enable = true;
-    zsh.enable = true;  # this is required due to a HM bug
   };
 
   home.sessionVariables = {

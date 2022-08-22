@@ -7,5 +7,6 @@
     #./multimedia.nix
     ./web.nix
     ./pgp.nix
+    ./terminal.nix
   ];
 }

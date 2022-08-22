@@ -30,7 +30,7 @@
         "history-substring-search"
         "systemd"
       ];
-      # theme = "fishy";
+      theme = "fishy";
     };
   };
 }
