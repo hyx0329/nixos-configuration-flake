@@ -27,8 +27,8 @@
         (nur.overlay)
         #(import ./overlays)
       ]
-    }
-    userName = "hyx"
+    };
+    userName = "hyx";
   in
   {
     nixosConfigurations.tp480 = nixpkgs.lib.nixosSystem {
