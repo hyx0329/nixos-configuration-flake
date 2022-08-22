@@ -4,7 +4,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # ./user.nix
     ];
 
   # Bootloader.
@@ -12,7 +11,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "hyx-kuro"; # Define your hostname.
+  networking.hostName = "ISC-CAT4"; # Define your hostname.
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -22,7 +21,7 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-  # note GNOME uses Wayland
+  # note GNOME uses Wayland, add xserver configs for compatibility
   services.xserver.videoDrivers = [ "nvidia" ];
 }
 
