@@ -6,5 +6,6 @@
     pkgs.gnomeExtensions.note
     pkgs.gnomeExtensions.openweather
     pkgs.gnomeExtensions.tray-icons-reloaded
+    pkgs.gnome.gnome-terminal
   ];
 }

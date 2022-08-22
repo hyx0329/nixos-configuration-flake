@@ -11,6 +11,7 @@
   programs = {
     bat.enable = true;
     fzf.enable = true;
+    bash.enable = true;  # this is required for HM to handle bash
   };
 
   programs.zsh = {

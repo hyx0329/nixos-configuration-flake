@@ -17,6 +17,24 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # allow home manager to config gnome
+  # enable dconf interface
   programs.dconf.enable = true;
+
+  # exclude some default packages
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-console
+    gnome-photos
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    gnome-music
+    gedit
+    epiphany # browser
+    geary # email reader
+    evince # document viewer
+    totem # video player
+    tali # poker
+    iagno # go
+    hitori # sudoku
+    atomix # puzzle
+  ])
 }
