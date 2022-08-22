@@ -25,6 +25,11 @@
       v2ray
       v2ray-domain-list-community
       v2ray-geoip
+      # basic utilities
+      curl
+      wget
+      git
+      vim
     ];
   };
 }
