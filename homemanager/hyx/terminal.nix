@@ -30,7 +30,7 @@
         "history-substring-search"
         "systemd"
       ];
-      theme = "daveverwer";
+      theme = "emotty";
     };
   };
 }
