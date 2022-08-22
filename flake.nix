@@ -27,19 +27,10 @@
   {
     nixosConfigurations = 
       let
-        # x86 configs
         system = "x86_64-linux";
-        pkgs = nixpkgs.legacyPackages.${system};  # a technique to make sure only one nixpkgs instance for multiple flakes
-        overlay-unstable = final: prev: {
-          unstable = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        };
         overlayModule = {
           nixpkgs.overlays = [
             (nur.overlay)
-            overlay-unstable
             #(import ./overlays)
           ];
         };
@@ -67,7 +58,7 @@
           }
         ];
         composeLinuxSystem = extraModules: nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
+          inherit system;
           specialArgs = {
             inherit system inputs;
             inherit nixos-hardware;  # for hardware configuration or will encounter infinite recursion
