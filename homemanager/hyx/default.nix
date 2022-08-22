@@ -4,12 +4,12 @@
   imports = [
     ./terminal.nix
     ./gpg.nix
+    ./vim.nix
   ];
 
   # here are basic packages from repository
   home.packages = [ 
     # editor
-    pkgs.vim
     pkgs.vscodium
 
     # downloader
@@ -66,10 +66,6 @@
     pkgs.gitFull
 
   ];
-
-  home.sessionVariables = {
-    EDITOR = "vim";
-  };  
 
   programs = {
     bash.enable = true;
