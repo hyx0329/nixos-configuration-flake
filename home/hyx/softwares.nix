@@ -54,6 +54,11 @@
     # user space driver
     epson-escpr2
 
+    # dev utils
+    arch-install-scripts
+    gcc_multi
+    gdb
+
     # other utilities
     expect
     file
