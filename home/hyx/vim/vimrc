@@ -1,0 +1,93 @@
+" only required on arch(?)
+" runtime! archlinux.vim
+" source $VIMRUNTIME/defaults.vim
+
+" disable the annoying bell
+set visualbell
+" line number
+set nu
+" tab and indent configuration
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set modeline
+
+set nocompatible
+filetype off
+set encoding=utf-8
+
+call plug#begin('~/.vim/plugged')
+" load plugins using vim-plug
+
+" easier editing
+" Plug 'vim-scripts/taglist.vim'
+" Plug 'preservim/tagbar'
+
+" Syntax checker & linter
+Plug 'dense-analysis/ale'
+
+"" language specific
+
+" Markdown
+Plug 'preservim/vim-markdown'
+
+" Rust, of course
+Plug 'rust-lang/rust.vim'
+
+" lineup text
+Plug 'godlygeek/tabular'
+
+" Auto completion
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'ycm-core/YouCompleteMe'
+
+" Debug tools
+Plug 'puremourning/vimspector'
+
+" deprecated syntax checker
+"Plug 'vim-syntastic/syntastic'
+
+call plug#end()
+
+syntax enable
+filetype plugin indent on
+
+" TagBar{{{
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_left = 0
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
+"}}}
+
+" Rust{{{
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
+"}}}
+
+" COC{{{
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"
+"function! s:check_back_space() abort
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+"
+"inoremap <silent><expr> <c-\> coc#refresh()
+"" if has('nvim')
+""   inoremap <silent><expr> <c-space> coc#refresh()
+"" else
+""   inoremap <silent><expr> <c-@> coc#refresh()
+"" endif
+"
+"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
+"}}}
