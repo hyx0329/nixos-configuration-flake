@@ -14,7 +14,8 @@
     enable = true;
     settings = {
       expandtab = true;
-      tabsize = 2;
+      tabstop = 2;
+      number = true;
     };
     extraConfig = 
 "
