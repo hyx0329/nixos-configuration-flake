@@ -4,7 +4,7 @@
   imports = [
     ./terminal.nix
     ./gpg.nix
-    ./vim.nix
+    ./vim
     ./gnome.nix
     ./softwares.nix
   ];

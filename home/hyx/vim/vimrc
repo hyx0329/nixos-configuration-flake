@@ -17,6 +17,9 @@ set nocompatible
 filetype off
 set encoding=utf-8
 
+# auto mouse, actually useful if not familiar with various vim actions
+set mouse=a
+
 call plug#begin('~/.vim/plugged')
 " load plugins using vim-plug
 
