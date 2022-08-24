@@ -13,6 +13,9 @@
     firefox
     ungoogled-chromium  # also you, require addtional arguments to work
 
+    # email
+    thunderbird
+
     # archive tools
     unzip
     p7zip
