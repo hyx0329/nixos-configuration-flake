@@ -71,6 +71,7 @@
           # config tp480
           tp480 = composeLinuxSystem [
             ./hosts/tp480                 # customized platform config for hardware
+            ./system/power/upower-critical-hybrid-suspend.nix
           ];
         };
   };
