@@ -1,11 +1,15 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.gnomeExtensions.gsconnect
-    pkgs.gnomeExtensions.note
-    pkgs.gnomeExtensions.openweather
-    pkgs.gnomeExtensions.tray-icons-reloaded
-    pkgs.gnome.gnome-terminal
-  ];
+  home.packages = (with pkgs.gnomeExtensions; [
+    gsconnect
+    note
+    openweather
+    tray-icons-reloaded
+    keep-awake
+    system-action-hibernate
+  ]) ++ (with pkgs.gnome; [
+    gnome-terminal
+  ]);
 }
+
