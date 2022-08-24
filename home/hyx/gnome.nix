@@ -2,7 +2,6 @@
 
 {
   home.packages = (with pkgs.gnomeExtensions; [
-    gsconnect
     note
     openweather
     tray-icons-reloaded
@@ -13,5 +12,7 @@
   ]) ++ (with pkgs; [
     papirus-icon-theme
   ]);
+
+  # GSConnect is configured system-wide
 }
 

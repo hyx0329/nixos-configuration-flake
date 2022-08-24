@@ -37,4 +37,10 @@
     hitori # sudoku
     atomix # puzzle
   ]);
+
+  # GSConnect, need to be a system-wide config
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
 }
