@@ -13,8 +13,9 @@
     firefox
     ungoogled-chromium  # also you, require addtional arguments to work
 
-    # email
-    thunderbird
+    # messaging
+    thunderbird  # email
+    tdesktop  # tg
 
     # archive tools
     unzip
