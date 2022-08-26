@@ -6,7 +6,7 @@
     ./gpg.nix
     ./vim
     ./gnome.nix
-    ./softwares.nix
+    ./softwares
   ];
 
   home.sessionVariables = {
