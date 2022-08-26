@@ -8,5 +8,7 @@
     ./web.nix
     ./pgp.nix
     ./terminal.nix
+    ./vm-and-multiarch.nix
   ];
 }
+
