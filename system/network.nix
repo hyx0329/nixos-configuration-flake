@@ -12,6 +12,20 @@
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPortRanges = [
+    {
+      from = 1001;
+      to = 39999;
+    }
+  ]; 
+
+  networking.firewall.allowedUDPPortRanges = [
+    {
+      from = 1001;
+      to = 39999;
+    }
+  ]; 
+
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
