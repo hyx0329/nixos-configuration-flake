@@ -3,9 +3,8 @@
 {
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # add printer driver
-  environment.systemPackages = [
+  services.printing.drivers = [
+    pkgs.epson-escpr
     pkgs.epson-escpr2
   ];
 }
