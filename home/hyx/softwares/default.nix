@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+
+  imports = [
+    ./gcc.nix
+  ];
+ 
   home.packages = with pkgs; [
     # terminal emulator
     foot
@@ -62,8 +67,6 @@
 
     # dev utils
     arch-install-scripts
-    gcc_multi
-    gdb
 
     # other utilities
     expect
