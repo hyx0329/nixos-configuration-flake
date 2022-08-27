@@ -9,6 +9,7 @@
     system-action-hibernate
   ]) ++ (with pkgs.gnome; [
     gnome-terminal
+    gnome-tweaks
   ]) ++ (with pkgs; [
     papirus-icon-theme
   ]);
