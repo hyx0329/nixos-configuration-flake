@@ -54,6 +54,8 @@
     libreoffice  # emm another office suite
     gnome.file-roller  # note I'm using gnome, this is archive viewer
     texlive.combined.scheme-full  # yep I need latex, still
+    gimp-with-plugins  # drawing
+    inkscape-with-extensions  # another drawing
 
     # user space driver
     # epson-escpr2  # move it to system package
