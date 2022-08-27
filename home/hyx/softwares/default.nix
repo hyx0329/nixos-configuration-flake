@@ -56,7 +56,7 @@
     texlive.combined.scheme-full  # yep I need latex, still
 
     # user space driver
-    epson-escpr2
+    # epson-escpr2  # move it to system package
 
     # dev utils
     arch-install-scripts
