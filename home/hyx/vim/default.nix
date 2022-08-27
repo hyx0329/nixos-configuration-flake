@@ -20,9 +20,8 @@ in
   };
 
   home.packages = [
-    vim_configured
-    pkgs.python3Full
-    pkgs.ctags
+    #vim_configured
+    pkgs.vimHugeX
   ];
 
   # seems broken, not working
@@ -54,8 +53,6 @@ in
   home.file.".vimrc".source = ./vimrc;
   #home.file.".vim/autoload/plug.vim".source = ./plug.vim;
 
-
-  # somehow the code below will not work after a garbage collection
   home.file.".vim/autoload/plug.vim".source = builtins.fetchurl {
     # pure, but may not be the latest
     url = "https://github.com/junegunn/vim-plug/raw/d94d234548a8fd6fa686812848f377f1419dafa1/plug.vim";

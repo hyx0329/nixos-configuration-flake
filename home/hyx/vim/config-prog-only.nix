@@ -18,7 +18,7 @@ let
 in
 {
   packageOverrides = pkgs: {
-    myVim = pkgs.vim_configurable.customize {
+    myVim = (pkgs.vim_configurable.override { python3 = pkgs.python310; }).customize {
       name = "vim-with-plugins";
       # add here code from the example section
       vimrcConfig.customRC = custom_rc;

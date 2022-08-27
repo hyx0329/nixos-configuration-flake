@@ -22,17 +22,20 @@ in
       name = "vim-with-plugins";
       # add here code from the example section
       vimrcConfig.customRC = custom_rc;
-      vimrcConfig.plug.plugins = with pkgs.vimPlugins; [
-        vim-addon-nix
-        youcompleteme
-        auto-pairs
-        tabular
-        rust-vim
-        vim-markdown
-        ale
-        vimspector
-        fugitive
-      ];
+      vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
+        start = [
+          vim-addon-nix
+          YouCompleteMe
+          auto-pairs
+          tabular
+          rust-vim
+          vim-markdown
+          ale
+          vimspector
+          fugitive
+        ];
+        opt = [];
+      };
     };
   };
 }
