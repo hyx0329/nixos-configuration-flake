@@ -2,22 +2,22 @@
 
 let
   cfg = config.services.clashup;
+  clashup_executable = builtins.fetchurl {
+    url = "https://github.com/felinae98/clashup/raw/002852b8a6cd73fd7378b0f2c6feeca6f16962ad/clashup";
+    sha256 = "8ace444678df0563cce6265cfdc7e22a69e41065600d0578d26fc937000b507c";
+  };
+
 in
 
-mkIf cfg.enable
 {
   home.packages = with pkgs; [
     clash
   ];
 
-  clashup_executable = fetchurl {
-    url = "https://github.com/felinae98/clashup/raw/002852b8a6cd73fd7378b0f2c6feeca6f16962ad/clashup";
-    sha256 = "8ace444678df0563cce6265cfdc7e22a69e41065600d0578d26fc937000b507c";
-  };
+  home.file.".local/bin/clashup".source = clashup_executable;
+  home.file.".local/bin/clashup".executable = true;
 
-  home.file.".local/bin/clashup".source = ${clashup_executable};
-
-  lib.systemd.user.services.clashup = {
+  systemd.user.services.clashup = {
     Unit = {
       Description = "Update clash config file";
       Wants = "network-online.target";
@@ -26,11 +26,11 @@ mkIf cfg.enable
     Service = {
       ExecStart = "${clashup_executable} --update";
       ExecStopPost = "/usr/bin/env systemctl --user restart clash";
-      Type = "oneshot"
+      Type = "oneshot";
     };
   };
 
-  lib.systemd.user.timers.clashup = {
+  systemd.user.timers.clashup = {
     Unit = {
       Description = "Update clash once a day";
       Wants = "network-online.target";
@@ -40,9 +40,23 @@ mkIf cfg.enable
       OnUnitActiveSec = "1d";
     };
     Install = {
-      WantedBy = "timers.target";
+      WantedBy = [ "timers.target" ];
     };
   };
 
+  systemd.user.services.clash = {
+    Unit = {
+      Description = "A rule based proxy in Go.";
+      After = "network.target";
+    };
+    Service = {
+      Type = "exec";
+      Restart = "on-abort";
+      ExecStart = "/usr/bin/env clash";
+    };
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+  };
 }
 
