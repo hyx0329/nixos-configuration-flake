@@ -3,9 +3,13 @@
 {
   # This will conflict with homemanager's config below
   # home manager's vim configuration tool sucks anyway
-  home.packages = [
-    pkgs.vim
-  ];
+  #home.packages = [
+  #  pkgs.vim
+  #];
+
+  (pkgs.callPackage ./config.nix {
+    vim_configurable = vim_configurable.override { python = python3; }; 
+   });
   
   home.sessionVariables = {
     EDITOR = "vim";
