@@ -9,8 +9,9 @@
     builtins.fetchTarball {
       url = "https://github.com/hosxy/Fcitx5-Material-Color/archive/refs/tags/0.2.1.tar.gz";
       # The sha256 value should be calculated through "nix-hash --type sha256 path/to/file"
+      # The sum is calculated AFTER the extraction.
       # There could be a problem where the encoding of the sums are different.
-      sha256 = "615d0f30c8ede30aacbe542dd6b09b6d308d50a79172380dfdf9ba1d1c6407c6";
+      sha256 = "8bd247209f9c1cb4c16543738fd5239772c87640a59535a93b54dae0e4f52d37";
     };
 
 }
