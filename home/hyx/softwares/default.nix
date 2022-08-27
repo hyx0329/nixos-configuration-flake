@@ -76,6 +76,8 @@
     gitFull
     podman
     s-tui
+    libsForQt5.k3b
+    brasero
 
   ];
 }
