@@ -36,7 +36,7 @@
   fileSystems."/home-old" = 
     { device = "/dev/disk/by-uuid/cd134c28-58bc-4084-a783-b37e753bcc98";
       fsType = "ext4";
-      options = [ "nofail" ];
+      options = [ "defaults" "nofail" ];
     };
 
   swapDevices = [ { device = "/dev/disk/by-uuid/fd8f8d7a-4b1c-472d-a85a-61c7b1a2d9b3"; } ];
