@@ -1,21 +1,31 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
+
+let
+  myVimPkg = (import ./config-prog-only.nix).packageOverrides pkgs;
+  vim_configured = lib.overrideDerivation myVimPkg.myVim (o: {
+        ftNixSupport = true;
+        pythonSupport = true;
+        luaSupport = true;
+        tclSupport = true;
+        cscopeSupport = true;
+        multibyteSupport = true;
+        mzschemeSupport = true;
+      });
+in
 
 {
-  (pkgs.callPackage ./config.nix {
-    vim_configurable = vim_configuable.override { python = python3; };
-   })
-
-  # This will conflict with homemanager's config below
-  # home manager's vim configuration tool sucks anyway
-  #home.packages = [
-  #  pkgs.vim
-  #];
 
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
   };
 
-  # seems broken, not working, disabled
+  home.packages = [
+    vim_configured
+    pkgs.python3Full
+    pkgs.ctags
+  ];
+
+  # seems broken, not working
   #programs.vim = {
   #  enable = true;
   #  settings = {
@@ -28,8 +38,15 @@
   #  '';
   #  plugins = with pkgs.vimPlugins; [
   #    vim-plug
+  #    vim-addon-nix
   #    YouCompleteMe
+  #    auto-pairs
+  #    tabular
   #    vim-markdown
+  #    vimspector
+  #    fugitive
+  #    ale
+  #    rust-vim
   #  ];
   #};
 
