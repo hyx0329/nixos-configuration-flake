@@ -4,6 +4,7 @@
 
   imports = [
     ./gcc.nix
+    ./python310.nix
   ];
  
   home.packages = with pkgs; [
@@ -32,7 +33,7 @@
     wget
 
     # proxy
-    clash
+    # clash  # move to separated config
     v2ray
     v2ray-geoip
     v2ray-domain-list-community
