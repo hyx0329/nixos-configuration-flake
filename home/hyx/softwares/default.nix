@@ -4,6 +4,7 @@
 
   imports = [
     ./gcc.nix
+    ./clash.nix
     ./python310.nix
   ];
  
