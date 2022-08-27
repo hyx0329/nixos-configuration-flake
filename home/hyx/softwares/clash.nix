@@ -38,6 +38,7 @@ in
     };
     Timer = {
       OnUnitActiveSec = "1d";
+      RandomizedDelaySec = "100";
     };
     Install = {
       WantedBy = [ "timers.target" ];
@@ -50,9 +51,9 @@ in
       After = "network.target";
     };
     Service = {
-      Type = "exec";
-      Restart = "on-abort";
-      ExecStart = "/usr/bin/env clash";
+      Type = "simple";
+      Restart = "always";
+      ExecStart = "/etc/profiles/per-user/hyx/bin/clash";
     };
     Install = {
       WantedBy = [ "default.target" ];
