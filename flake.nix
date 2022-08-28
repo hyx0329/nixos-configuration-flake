@@ -41,7 +41,8 @@
           ./system/linux/latest.nix     # use linux-latest
           ./system/users/${userName}.nix # my account config, don't forget to set passwd
           ./system/desktop/gnome.nix    # gnome4 looks cool
-          ./system/locale.nix           # IM, font, etc.
+          ./system/locale.nix           # IM, etc.
+          ./system/fonts.nix            # fonts
           ./system/network.nix          # network manager and default configs
           ./system/services             # power, bluetooth, audio, printing
           ./system/softwares            # include nix configs

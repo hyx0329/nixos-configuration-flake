@@ -29,7 +29,7 @@
   ];
   environment.systemPackages = with pkgs; [
     lua # required by fcitx5-lua
-    wqy_microhei  # font
+    # wqy_microhei  # font, but this way is not recommended
   ];
 
 }
