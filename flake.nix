@@ -37,7 +37,8 @@
         commonConfigs = [
           overlayModule                 # global overlay module
           ./system/release-configs.nix  # allow non-free, pin stateVersion
-          ./system/linux/zen.nix        # use linux-zen
+          #./system/linux/zen.nix        # use linux-zen
+          ./system/linux/latest.nix     # use linux-latest
           ./system/users/${userName}.nix # my account config, don't forget to set passwd
           ./system/desktop/gnome.nix    # gnome4 looks cool
           ./system/locale.nix           # IM, font, etc.
