@@ -10,6 +10,7 @@
   ]) ++ (with pkgs.gnome; [
     gnome-terminal
     gnome-tweaks
+    nautilus-python
   ]) ++ (with pkgs; [
     papirus-icon-theme
   ]);
