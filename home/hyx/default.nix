@@ -14,5 +14,7 @@
     NIXOS_OZONE_WL = "1";    # enable wayland for Ozone
     PATH = ''''${HOME}/.local/bin:''${PATH}'';
   };
+
+  # TODO: link font folder
 }
 
