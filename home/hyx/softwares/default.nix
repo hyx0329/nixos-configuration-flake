@@ -14,7 +14,7 @@
     alacritty
 
     # editor
-    vscodium  # fuck off, electron does not work well with wayland
+    #vscodium  # fuck off, electron does not work well with wayland
 
     # browser
     firefox
