@@ -50,6 +50,8 @@
     freecad
     librecad
     kicad
+    calculix
+    gmsh
 
     # media view & edit
     mpv  # audio & video
