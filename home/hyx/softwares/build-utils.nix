@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    cmake
+    #cmake
     gcc
     #gcc-arm-embedded
     #gcc_multi
