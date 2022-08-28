@@ -33,7 +33,7 @@
   #     fsType = "ext4";
   #   };
 
-  fileSystems."/home-old" = 
+  fileSystems."/secondary" = 
     { device = "/dev/disk/by-uuid/cd134c28-58bc-4084-a783-b37e753bcc98";
       fsType = "ext4";
       options = [ "defaults" "nofail" ];
