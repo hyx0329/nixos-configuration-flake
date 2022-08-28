@@ -2,16 +2,18 @@
 
 {
   imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-      nixos-hardware.nixosModules.lenovo-thinkpad-t480
-      nixos-hardware.nixosModules.common-pc-laptop-ssd # my specific setup
-      nixos-hardware.nixosModules.common-cpu-intel-kaby-lake  # for i7 8550u ?
-      nixos-hardware.nixosModules.common-gpu-intel
-      nixos-hardware.nixosModules.common-gpu-nvidia
-    ];
+  [
+    (modulesPath + "/installer/scan/not-detected.nix")
+    nixos-hardware.nixosModules.lenovo-thinkpad-t480
+    nixos-hardware.nixosModules.common-pc-laptop-ssd # my specific setup
+    nixos-hardware.nixosModules.common-cpu-intel-kaby-lake  # for i7 8550u ?
+    nixos-hardware.nixosModules.common-gpu-intel
+    nixos-hardware.nixosModules.common-gpu-nvidia
+  ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci" "nvme" "usb_storage" "sd_mod"
+  ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
