@@ -1,30 +1,32 @@
 { config, lib, pkgs, ... }:
 
-let
-  myVimPkg = (import ./config-prog-only.nix).packageOverrides pkgs;
-  vim_configured = lib.overrideDerivation myVimPkg.myVim (o: {
-        ftNixSupport = true;
-        pythonSupport = true;
-        luaSupport = true;
-        tclSupport = true;
-        cscopeSupport = true;
-        multibyteSupport = true;
-        mzschemeSupport = true;
-      });
-in
+#let
+#  myVimPkg = (import ./config-prog-only.nix).packageOverrides pkgs;
+#  vim_configured = lib.overrideDerivation myVimPkg.myVim (o: {
+#        ftNixSupport = true;
+#        pythonSupport = true;
+#        luaSupport = true;
+#        tclSupport = true;
+#        cscopeSupport = true;
+#        multibyteSupport = true;
+#        mzschemeSupport = true;
+#      });
+#in
 
 {
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "vim";
   };
 
+  # This will interfere with vim settings below
   home.packages = [
     #vim_configured
     pkgs.vimHugeX
   ];
 
-  # seems broken, not working
+  ### give control to home manager ###
+  ### don't set vim in systemwide per-user configs
   #programs.vim = {
   #  enable = true;
   #  settings = {
@@ -49,10 +51,17 @@ in
   #  ];
   #};
 
-  # manual configuation
+  ### manual configuation example ###
+
+  # load configs from current directory
   home.file.".vimrc".source = ./vimrc;
   #home.file.".vim/autoload/plug.vim".source = ./plug.vim;
 
+  # load configs/scripts from internet
+  # note for fetchUrl the sha256 is calculated through
+  # sha256sum, but for fetchTarball, the sha256 is
+  # calculated with "nix-hash --type sha256" after
+  # extracted.
   home.file.".vim/autoload/plug.vim".source = builtins.fetchurl {
     # pure, but may not be the latest
     url = "https://github.com/junegunn/vim-plug/raw/d94d234548a8fd6fa686812848f377f1419dafa1/plug.vim";

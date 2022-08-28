@@ -17,19 +17,20 @@
       "floppy" "lp" "cdrom"
     ];
     packages = with pkgs; [
-      # web browser
-      firefox
-      ungoogled-chromium
+      # Note: packages here will interfere with home manager
+      #web browser
+      #firefox
+      #ungoogled-chromium
       # some proxy tools
-      clash
-      v2ray
-      v2ray-domain-list-community
-      v2ray-geoip
+      #clash
+      #v2ray
+      #v2ray-domain-list-community
+      #v2ray-geoip
       # basic utilities
-      curl
-      wget
-      git
-      vim
+      #curl
+      #wget
+      #git
+      #vim
     ];
   };
 

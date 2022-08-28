@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     # basic editor
-    vim # default editor is nano(but modified elsewhere)
+    vimHugeX # default editor is nano(but modified elsewhere)
 
     # download tools
     wget
