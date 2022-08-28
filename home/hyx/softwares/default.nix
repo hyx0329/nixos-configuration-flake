@@ -71,6 +71,7 @@
     arch-install-scripts
 
     # other utilities
+    dig dnsutils traceroute
     expect
     file
     fsearch  # file searching
