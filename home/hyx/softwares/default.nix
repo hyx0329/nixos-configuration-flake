@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ./gcc.nix
+    ./build-utils.nix
     ./clash.nix
     ./python310.nix
   ];
