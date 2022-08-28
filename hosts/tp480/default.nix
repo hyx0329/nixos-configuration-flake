@@ -2,9 +2,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./thinkfan.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
