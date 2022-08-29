@@ -4,6 +4,8 @@
   fonts.fonts = with pkgs; [
     nerdfonts
     font-awesome
+    font-awesome_5
+    font-awesome_4
     wqy_zenhei
     wqy_microhei
   ];
