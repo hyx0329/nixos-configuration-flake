@@ -7,6 +7,7 @@
     tray-icons-reloaded
     keep-awake
     system-action-hibernate
+    sound-output-device-chooser
   ]) ++ (with pkgs.gnome; [
     gnome-terminal
     gnome-tweaks
