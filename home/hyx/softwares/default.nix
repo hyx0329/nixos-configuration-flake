@@ -82,6 +82,7 @@
     s-tui
     libsForQt5.k3b
     brasero
+    sony-headphones-client
 
   ];
 }
