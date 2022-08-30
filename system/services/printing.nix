@@ -7,5 +7,10 @@
     pkgs.epson-escpr
     pkgs.epson-escpr2
   ];
+
+  environment.systemPackages = [
+    pkgs.ink  # read ink level
+    pkgs.libinklevel  # interface (?)
+  ];
 }
 
