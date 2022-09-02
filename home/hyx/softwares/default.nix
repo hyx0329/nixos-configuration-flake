@@ -6,6 +6,7 @@
     ./build-utils.nix
     ./clash.nix
     ./python310.nix
+    ./android.nix
   ];
  
   home.packages = with pkgs; [
