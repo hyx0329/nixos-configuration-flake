@@ -8,6 +8,8 @@
     font-awesome_4
     wqy_zenhei
     wqy_microhei
+    #vistafonts
+    carlito  # calibri compatible
   ];
 
   # link all fonts to /run/current-system/sw/share/X11/fonts
