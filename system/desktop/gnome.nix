@@ -30,7 +30,7 @@
     gedit
     epiphany # browser
     geary # email reader
-    evince # document viewer
+    #evince # document viewer
     totem # video player
     tali # poker
     iagno # go
