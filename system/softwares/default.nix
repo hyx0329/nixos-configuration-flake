@@ -9,6 +9,7 @@
     ./pgp.nix
     ./terminal.nix
     ./vm-and-multiarch.nix
+    ./keyd
   ];
 }
 
