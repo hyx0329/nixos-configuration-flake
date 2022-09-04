@@ -5,6 +5,7 @@
     ./bluetooth.nix
     ./printing.nix
     ./smartcard.nix
+    ./udev.nix
   ];
 }
 
