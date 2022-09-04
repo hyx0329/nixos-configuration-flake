@@ -24,5 +24,11 @@
   };
   # note GNOME uses Wayland, add xserver configs for compatibility
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  # binfmt, wonder why configurations laying here
+  boot.binfmt.emulatedSystems = [
+    "aarch64-linux"
+    "riscv64-linux"
+  ];
 }
 
