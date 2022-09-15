@@ -5,7 +5,7 @@
     note
     openweather
     tray-icons-reloaded
-    keep-awake
+    caffeine # auto disable screensaver plus a button
     system-action-hibernate
     sound-output-device-chooser
   ]) ++ (with pkgs.gnome; [
