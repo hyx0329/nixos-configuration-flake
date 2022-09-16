@@ -30,5 +30,11 @@
     "aarch64-linux"
     "riscv64-linux"
   ];
+
+  # some fancy stuff
+  boot.plymouth = {
+    enable = true;
+    theme = "bgrt";  # UEFI logo
+  };
 }
 
