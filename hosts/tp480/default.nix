@@ -34,7 +34,8 @@
   # some fancy stuff
   boot.plymouth = {
     enable = true;
-    theme = "bgrt";  # UEFI logo
+    theme = "bgrt";  # UEFI logo, if possible
+    logo = ./logo.png;  # specifiy a custom logo
   };
 }
 
