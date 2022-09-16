@@ -72,6 +72,12 @@
         {
           # config tp480
           tp480 = composeLinuxSystem [
+            {
+              nixpkgs.overlays = [
+                # override package defaults
+                (final: prev: { vaapiIntel = prev.vaapiIntel.override { enableHybridCodec = true; }; })
+              ];
+            }
             ./hosts/tp480                 # customized platform config for hardware
             ./system/power/upower-critical-hybrid-suspend.nix
           ];

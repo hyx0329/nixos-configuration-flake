@@ -5,6 +5,7 @@
   [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./thinkfan.nix
+    ./video-hardware-acceleration.nix
   ];
 
   # Bootloader.

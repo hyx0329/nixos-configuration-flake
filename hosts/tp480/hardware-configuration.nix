@@ -9,6 +9,9 @@
     nixos-hardware.nixosModules.common-cpu-intel-kaby-lake  # for i7 8550u ?
     nixos-hardware.nixosModules.common-gpu-intel
     nixos-hardware.nixosModules.common-gpu-nvidia
+    # for hybrid-graphics setup, manual config below
+    #./hybrid-graphics-t480.nix
+    # instead, fix the collision by using an overlay in the root config
   ];
 
   boot.initrd.availableKernelModules = [
